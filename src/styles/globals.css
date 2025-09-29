@@ -18,15 +18,16 @@
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: var(--font-sans);
+  font-family: Arial, sans-serif; /* fallback */
 }
 
-/* Reusable utility classes */
-.btn {
-  @apply px-4 py-2 rounded-lg font-semibold transition-colors;
-  background-color: var(--accent);
-  color: white;
-}
-.btn:hover {
-  background-color: var(--accent-hover);
+@layer components {
+  .btn {
+    @apply px-4 py-2 rounded-lg font-semibold transition-colors;
+    background-color: var(--accent);
+    color: white;
+  }
+  .btn:hover {
+    background-color: var(--accent-hover);
+  }
 }
