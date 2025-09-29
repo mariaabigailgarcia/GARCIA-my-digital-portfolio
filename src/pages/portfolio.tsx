@@ -111,34 +111,37 @@ export default function Portfolio() {
       {/* Modal */}
       {isModalOpen && (
         <div className="fixed inset-0 bg-black bg-opacity-70 flex items-center justify-center z-50">
-          <div className="relative max-w-3xl w-full p-4">
-            <img
-              src={modalImages[modalIndex]}
-              alt={`Modal ${modalIndex + 1}`}
-              className="w-full max-h-[80vh] object-contain rounded shadow-lg"
-            />
-            {/* Controls */}
-            <button
-              onClick={() =>
-                setModalIndex((modalIndex - 1 + modalImages.length) % modalImages.length)
-              }
-              className="absolute top-1/2 left-4 -translate-y-1/2 bg-gray-800 text-white rounded-full px-3 py-1"
-            >
-              ◀
-            </button>
-            <button
-              onClick={() => setModalIndex((modalIndex + 1) % modalImages.length)}
-              className="absolute top-1/2 right-4 -translate-y-1/2 bg-gray-800 text-white rounded-full px-3 py-1"
-            >
-              ▶
-            </button>
-            {/* Close */}
-            <button
-              onClick={closeModal}
-              className="absolute top-4 right-4 bg-red-600 text-white rounded-full px-3 py-1"
-            >
-              ✕
-            </button>
+          <div className="max-w-3xl w-full p-4">
+            <div className="relative">
+              <img
+                src={modalImages[modalIndex]}
+                alt={`Modal ${modalIndex + 1}`}
+                className="w-full max-h-[80vh] object-contain rounded shadow-lg transition-transform duration-300 hover:scale-105"
+              />
+              {/* Close */}
+              <button
+                onClick={closeModal}
+                className="absolute top-2 right-2 bg-red-600 text-white rounded-full px-3 py-1 transition-transform hover:scale-110 hover:bg-red-700"
+              >
+                ✕
+              </button>
+              {/* Prev */}
+              <button
+                onClick={() =>
+                  setModalIndex((modalIndex - 1 + modalImages.length) % modalImages.length)
+                }
+                className="absolute top-1/2 left-4 -translate-y-1/2 bg-gray-800 text-white rounded-full px-3 py-1 transition-transform hover:scale-110"
+              >
+                ◀
+              </button>
+              {/* Next */}
+              <button
+                onClick={() => setModalIndex((modalIndex + 1) % modalImages.length)}
+                className="absolute top-1/2 right-4 -translate-y-1/2 bg-gray-800 text-white rounded-full px-3 py-1 transition-transform hover:scale-110"
+              >
+                ▶
+              </button>
+            </div>
           </div>
         </div>
       )}

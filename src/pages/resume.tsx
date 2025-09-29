@@ -26,8 +26,6 @@ export default function Resume() {
           <SkillPill skill="Next.js" />
           <SkillPill skill="Tailwind CSS" />
           <SkillPill skill="C#" />
-          <SkillPill skill="WPF" />
-          <SkillPill skill="Tailwind CSS" />
         </div>
       </main>
       <Footer />
